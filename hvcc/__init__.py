@@ -195,7 +195,7 @@ def compile_dataflow(in_path, out_dir, patch_name=None, patch_meta_file=None,
         c_src_dir = os.path.join(out_dir, "c")
         results["ir2c"] = ir2c.ir2c.compile(
             hv_ir_path=os.path.join(results["hv2ir"]["out_dir"], results["hv2ir"]["out_file"]),
-            static_dir=os.path.join(os.path.dirname(__file__), "generators/ir2c/static"),
+            static_dir=os.path.join(os.path.dirname(__file__), os.path.join(os.path.join(os.path.join("generators"), "ir2c"), "static")),
             output_dir=c_src_dir,
             externs=externs,
             copyright=copyright)
